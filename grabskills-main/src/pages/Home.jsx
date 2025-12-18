@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValue, animate } from "framer-motion";
+import { useEffect, useState } from "react";
 import heroImage from "../assets/hero.jpg";
 import { FaLeaf, FaUsers, FaLightbulb, FaHandHoldingHeart } from "react-icons/fa";
 import FocusCard from "../components/FocusCard";
@@ -17,6 +18,36 @@ const staggerContainer = {
     }
   }
 };
+
+
+function Counter({ value, suffix = "" }) {
+  const [display, setDisplay] = useState(0);
+  const count = useMotionValue(0);
+
+  useEffect(() => {
+    const controls = animate(count, value, {
+      duration: 2,
+      ease: "easeOut",
+      onUpdate(latest) {
+        setDisplay(Math.round(latest));
+      }
+    });
+
+    return () => controls.stop();
+  }, [value]);
+
+  return (
+    <motion.span
+      className="inline-block"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+    >
+      {display}
+      {suffix}
+    </motion.span>
+  );
+}
 
 export default function Home() {
   const navigate = useNavigate();
@@ -87,9 +118,76 @@ export default function Home() {
         >
           <h2 className="text-4xl font-bold">Why We Exist</h2>
           <p className="mt-4 text-gray-600 dark:text-gray-400">
-            Our mission is to bridge gaps in education, environment, and social care
-            by empowering people with skills and opportunities.
+            Millions of people lack access to quality education, sustainable livelihoods, and basic environmental protection. We exist to bridge this gap by creating scalable, community-driven solutions that empower individuals rather than make them dependent.
           </p>
+        </motion.div>
+      </section>
+
+      {/* IMPACT */}
+      <section className="py-24 bg-gray-100 dark:bg-gray-950 px-6">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-6xl mx-auto text-center"
+        >
+          <h2 className="text-4xl font-bold tracking-wide mb-16">
+            OUR IMPACT
+          </h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+
+            <div>
+              <h3 className="text-5xl font-extrabold text-indigo-600">
+                <Counter value={20} suffix="+" />
+              </h3>
+              <p className="mt-3 font-semibold uppercase tracking-wide">
+                Lakh Lives
+              </p>
+              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                Children and families supported every year
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-5xl font-extrabold text-indigo-600">
+                <Counter value={2000} suffix="+" />
+              </h3>
+              <p className="mt-3 font-semibold uppercase tracking-wide">
+                Villages
+              </p>
+              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                Rural and urban communities reached
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-5xl font-extrabold text-indigo-600">
+                <Counter value={400} suffix="+" />
+              </h3>
+              <p className="mt-3 font-semibold uppercase tracking-wide">
+                Projects
+              </p>
+              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                Focused on education, healthcare and empowerment
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-5xl font-extrabold text-indigo-600">
+                <Counter value={27} suffix="+" />
+              </h3>
+              <p className="mt-3 font-semibold uppercase tracking-wide">
+                States
+              </p>
+              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                Including remote and underserved regions
+              </p>
+            </div>
+
+          </div>
         </motion.div>
       </section>
 
