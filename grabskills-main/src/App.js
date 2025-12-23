@@ -9,7 +9,10 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Health from "./pages/health";
 import Environment from "./pages/environment";
-
+import Entrepreneurship from "./pages/entrepreneurship";
+import Womenempowerment from "./pages/women-empowerment";
+import Education from "./pages/education";
+import Rural from "./pages/rural-development";
 function App() {
   return (
     <BrowserRouter>
@@ -24,6 +27,10 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/health" element={<Health />} />
           <Route path="/environment" element={<Environment />} />
+          <Route path="/entrepreneurship" element={<Entrepreneurship />} />
+          <Route path="/women-empowerment" element={<Womenempowerment />} />
+           <Route path="/education" element={<Education />} />
+           <Route path="/rural-development" element={<Rural />} />
         </Routes>
 
         <Footer />

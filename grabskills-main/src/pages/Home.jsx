@@ -63,6 +63,30 @@ const staggerContainer = {
     }
   }
 };
+function ProgramItem({ icon, title, desc, color, onClick }) {
+  return (
+    <motion.div
+      variants={fadeUp}
+      whileHover={{ x: 6 }}
+      onClick={onClick}
+      className="flex items-start gap-6 cursor-pointer group"
+    >
+      <div className={`w-14 h-14 flex items-center justify-center rounded-xl ${color} text-2xl`}>
+        {icon}
+      </div>
+
+      <div>
+        <h3 className="font-extrabold tracking-wide text-lg group-hover:underline">
+          {title}
+        </h3>
+        <p className="mt-2 text-gray-600 dark:text-gray-400 max-w-sm">
+          {desc}
+        </p>
+      </div>
+    </motion.div>
+  );
+}
+
 
 /* Counter */
 function Counter({ value, suffix = "" }) {
@@ -329,60 +353,84 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* OUR PROGRAMS (VERTICAL) */}
-      <section
-        id="programs"
-        className="py-24 px-6 bg-white dark:bg-gray-950"
-      >
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false }}
-          className="max-w-4xl mx-auto text-center mb-16"
-        >
-          <h2 className="text-4xl font-bold">Our Programs</h2>
-          <p className="mt-4 text-gray-600 dark:text-gray-400">
-            Focused initiatives designed to create long-term community impact.
-          </p>
-        </motion.div>
+     {/* OUR PROGRAMS */}
+<section id="programs" className="py-28 px-6 bg-white dark:bg-gray-950">
+  <motion.div
+    variants={fadeUp}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    className="max-w-4xl mx-auto text-center mb-20"
+  >
+    <h2 className="text-4xl font-bold">Our Programs</h2>
+    <p className="mt-4 text-gray-600 dark:text-gray-400">
+      We work across key areas to create sustainable, long-term impact at the grassroots level.
+    </p>
+  </motion.div>
 
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false }}
-          className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8"
-        >
-          <div className="flex flex-col gap-6">
-            <motion.button variants={fadeUp} onClick={() => navigate("/environment")} className="text-left">
-              <FocusCard icon={<FaLeaf />} title="Environment & Climate Action" desc="Promoting sustainability and climate resilience." />
-            </motion.button>
+  <motion.div
+    variants={staggerContainer}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: false }}
+    className="max-w-6xl mx-auto grid md:grid-cols-2 gap-x-24 gap-y-16"
+  >
 
-            <motion.button variants={fadeUp} onClick={() => navigate("/entrepreneurship")} className="text-left">
-              <FocusCard icon={<FaUsers />} title="Entrepreneurship & Innovation Development" desc="Supporting entrepreneurs and startups." />
-            </motion.button>
+    {/* LEFT COLUMN */}
+    <div className="space-y-16">
+      <ProgramItem
+        icon={<FaLeaf />}
+        color="text-green-600 bg-green-100"
+        title="ENVIRONMENT & CLIMATE ACTION"
+        desc="Promoting sustainability, conservation, and climate resilience within communities."
+        onClick={() => navigate("/environment")}
+      />
 
-            <motion.button variants={fadeUp} onClick={() => navigate("/education")} className="text-left">
-              <FocusCard icon={<FaLightbulb />} title="Education & Skill Development" desc="Enhancing learning and employability." />
-            </motion.button>
-          </div>
+      <ProgramItem
+        icon={<FaUsers />}
+        color="text-teal-600 bg-teal-100"
+        title="ENTREPRENEURSHIP & INNOVATION"
+        desc="Supporting entrepreneurs and startups to create inclusive economic opportunities."
+        onClick={() => navigate("/entrepreneurship")}
+      />
 
-          <div className="flex flex-col gap-6">
-            <motion.button variants={fadeUp} onClick={() => navigate("/health")} className="text-left">
-              <FocusCard icon={<FaHandHoldingHeart />} title="Health & Hygiene" desc="Improving healthcare access and hygiene awareness." />
-            </motion.button>
+      <ProgramItem
+        icon={<FaLightbulb />}
+        color="text-yellow-600 bg-yellow-100"
+        title="EDUCATION & SKILL DEVELOPMENT"
+        desc="Enhancing learning outcomes and employability through education and training."
+        onClick={() => navigate("/education")}
+      />
+    </div>
 
-            <motion.button variants={fadeUp} onClick={() => navigate("/women-empowerment")} className="text-left">
-              <FocusCard icon={<FaUsers />} title="Women Empowerment" desc="Empowering women through education and leadership." />
-            </motion.button>
+    {/* RIGHT COLUMN */}
+    <div className="space-y-16">
+      <ProgramItem
+        icon={<FaHandHoldingHeart />}
+        color="text-purple-600 bg-purple-100"
+        title="HEALTH & HYGIENE"
+        desc="Improving healthcare access and hygiene awareness in underserved communities."
+        onClick={() => navigate("/health")}
+      />
 
-            <motion.button variants={fadeUp} onClick={() => navigate("/rural-development")} className="text-left">
-              <FocusCard icon={<FaUsers />} title="Rural Development & Livelihood" desc="Strengthening rural economies." />
-            </motion.button>
-          </div>
-        </motion.div>
-      </section>
+      <ProgramItem
+        icon={<FaUsers />}
+        color="text-pink-600 bg-pink-100"
+        title="WOMEN EMPOWERMENT"
+        desc="Empowering women through education, leadership, and community participation."
+        onClick={() => navigate("/women-empowerment")}
+      />
+
+      <ProgramItem
+        icon={<FaUsers />}
+        color="text-orange-600 bg-orange-100"
+        title="RURAL DEVELOPMENT & LIVELIHOOD"
+        desc="Strengthening rural economies and sustainable livelihood opportunities."
+        onClick={() => navigate("/rural-development")}
+      />
+    </div>
+  </motion.div>
+</section>
 
       {/* BLOGS */}
       <section className="py-24 px-6 bg-gray-100 dark:bg-gray-900">
