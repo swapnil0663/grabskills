@@ -1,19 +1,30 @@
 // Education.jsx
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 
-const Education = () => {
+// Import all images from assets folder
+import eduWebp from "../assets/edu.webp";
+import educaJpg from "../assets/educa.jpg";
+import educationeJpg from "../assets/educatione.jpg";
+import educationgJpg from "../assets/educationg.jpg";
+import impactImage from "../assets/impact.webp";
+import reachProjects from "../assets/reach-projects.webp";
+import reachStates from "../assets/reach-states.webp";
+import reachDistricts from "../assets/reach-districts.webp";
+import reachGovt from "../assets/reach-govt.webp";
+import storyArjun from "../assets/story-arjun.webp";
+import storySanjana from "../assets/story-sanjana.webp";
+import storyBasheer from "../assets/story-basheer.webp";
+
+const Education = ({ darkMode }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedStory, setSelectedStory] = useState(null);
-  const navigate = useNavigate();
   
-  // Array of background images
+  // Array of background images - updated to use imported assets
   const backgroundImages = [
-    'https://z-cdn-media.chatglm.cn/files/c781a99d-f1d5-40f7-b9b2-c18d0842d173.png?auth_key=1866068830-dbd1debf95634db4bade74a51986555d-0-ea995fbced0853d2b8c2d3b5a79cec3b',
-    'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
-    'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
-    'https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
-    'https://images.unsplash.com/photo-1581078074564-9245f9df1c1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80'
+    eduWebp,
+    educaJpg,
+    educationeJpg,
+    educationgJpg,
   ];
 
   // Education flow steps
@@ -31,7 +42,7 @@ const Education = () => {
       title: "Bridge Course for Non-School Going Children",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283-.356-1.857m0 0a5.002 5.002 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
         </svg>
       )
     },
@@ -84,25 +95,25 @@ const Education = () => {
       value: "261", 
       label: "projects", 
       color: "#10b981",
-      image: "https://z-cdn-media.chatglm.cn/files/87d9b6f9-b3f4-45c8-af57-e757d5a6adf2.png?auth_key=1866163715-6046c209e97044e281c67282cb37f566-0-8c7f9979771186651809118371b1984c"
+      image: reachProjects
     },
     { 
       value: "27", 
       label: "states", 
       color: "#f59e0b",
-      image: "https://z-cdn-media.chatglm.cn/files/b7d34ef2-d611-45a2-b091-ce213427e3aa.png?auth_key=1866163715-aff63c09d5114e91875ce24e6119edf6-0-c393892cf158819676d806457ede1633"
+      image: reachStates
     },
     { 
       value: "12", 
       label: "Aspirational Districts", 
       color: "#10b981",
-      image: "https://z-cdn-media.chatglm.cn/files/eee264a9-6b1b-4f79-b47b-483bd1fafad6.png?auth_key=1866165218-8bdeb77ba29f490ca4104c375270fe40-0-d1d7b405a4696fd25eed049527f1bf7c"
+      image: reachDistricts
     },
     { 
       value: "8", 
       label: "Government Connect States", 
       color: "#f59e0b",
-      image: "https://z-cdn-media.chatglm.cn/files/61a8ebba-2e4f-4f49-b232-084d0cac5f2a.png?auth_key=1866165218-aaa56f1078e6424089ee9b8c3254a05b-0-281c33b31d56953865a10c8e2564966c"
+      image: reachGovt
     }
   ];
 
@@ -111,27 +122,22 @@ const Education = () => {
     {
       name: "ARJUN",
       description: "13-year old Arjun, lives in Hoti camp slum community, in Delhi, with his uncle and aunt. During one of the field visits to Hoti camp, he was found in a dirty and unhygienic state. In the initial interaction which the EOW teachers had, they saw he was easily intimidated and unresponsive.",
-      image: "https://sukarya.org/wp-content/uploads/2020/08/Arjun-pic-20.11.2019.jpg",
+      image: storyArjun,
       fullStory: "Scoring a perfect 10 on an educational transformation scale: Arjun's story\n\n13-year old Arjun, lives in Hoti camp slum community, in Delhi, with his uncle and aunt. During one of the field visits to Hoti camp, he was found in a dirty and unhygienic state. In the initial interaction which the EOW teachers had, they saw he was easily intimidated and unresponsive. After a few visits, he started mixing up with teachers. Finally, he enrolled in the EOW programme.\n\nAs he began to open up, the teachers discovered he was being ill treated by his uncle and aunt. This contributed to his erratic moods and depressive behaviour. He even harboured the thought of running away from home.\n\nHe got into the habit of begging in the temple in Rangpuri area. Post his induction in the EOW, he was given regular counselling by teachers on the importance of education, healthy lifestyle and values. Gradually, his personality began to change and his appearance and behaviour showed major improvement. He was punctual in boarding the EOW bus for studies and did not go out to beg.\n\nHe studied hard and cleared the Open Basic Examination that will now get him mainstreamed in the government school for higher studies. He is instrumental in bringing getting more children enrolled for non-formal education (NFE). Overall, 165 students like Arjun have got inducted into government schools and another 34 took their exams in February this year. Nearly 100% who took the exams (199 out of 200) got successfully mainstreamed, which is a major success for the programme."
     },
     {
       name: "SANJANA",
       description: "Sanjana resides in Nalapar with her parents and three siblings. Her family migrated from rural Punjab to Delhi in search of better job opportunities. However, their monthly income remained stagnant at a mere Rs 6,000 a month.",
-      image: "https://sukarya.org/wp-content/uploads/2020/08/sanjana.jpg",
+      image: storySanjana,
       fullStory: "Making school the centre of her Universe: Sanjana's story\n\nSanjana resides in Nalapar with her parents and three siblings. Her family migrated from rural Punjab to Delhi in search of better job opportunities. However, their monthly income remained stagnant at a mere Rs 6,000 a month. Sanjana could not afford school due to long distance, family pressure and monetary and social constraints.\n\nShe would watch other children go with satchels on their bag and later in the day and do their homework and she would get upset. When the EOW Project team began approaching people in her neighbourhood and she heard what the bus provided and how children like her got an opportunity to study free of cost, she was ecstatic. Soon, the team from EOW visited her home and talked to her parents.\n\nIt was agreed to send Sanjana to school. She knew that god had answered her prayers. She went to the temple and thanked Him for his benevolence. She planned and prepared her lessons before hand and was one of the most attentive students in class. She became a favourite with her teachers and was one of the first girls whose names was on the list to be mainstreamed to a government school.\n\n\"I have learnt so much from my teacher. She provided me insights into the world which I want to belong to. When I grow up, I would like to become like her so that I can guide others like me the same way.\""
     },
     {
       name: "BASHEER",
       description: "When the Education on Wheels project team explored one of the odd slums located in Sector 57, Gurugram, there were many out-of-school children who had their own different aspirations. Their dreams ranged from becoming a teacher to a doctor, scientist and dancer.",
-      image: "https://sukarya.org/wp-content/uploads/2020/07/Basheer.jpg",
+      image: storyBasheer,
       fullStory: "Pursuing cricketing aspirations along with studies: Basheer's story\n\nWhen the Education on Wheels project team explored one of the odd slums located in Sector 57, Gurugram, there were many out-of-school children who had their own different aspirations. Their dreams ranged from becoming a teacher to a doctor, scientist and dancer. Basheer was very clear he wanted to turn his hobby of playing cricket into a profession and scale heights of success like his idol, MS Dhoni.\n\nWhen his family moved from West Bengal to Gurugram in hope of a better livelihood, he had to discontinue his studies and help his parents in eking out a living.\n\nThe Remedial classes as part of the EOW progamme came as a blessing giving a drop-out student like him a chance to catch up on studies. Observing his sharp aesthetic sense and keen interest, the teachers motivated him to be regular and to get good grades in exams. They also engaged him to participate in extracurricular activities. They guided him on his cricket coaching and told him to pursue his passion seriously but also to continue with studies and give them equal priority. He is extremely grateful to Sukarya for providing direction and tools to plan his future. He soon joined a Cricket Academy and began to play local matches. Meanwhile, he was also doing well in studies. He was referred to as the boy with a golden smile.\n\nHe is now ready to appear for the 5th grade Open Basic Education examination being conducted by the National Institute of Open Schooling (NIOS). He says with a twinkle in his eye, \"from a rolling stone I am on way to becoming a chiselled diamond.\""
     },
-    {
-      name: "HARSIMRAN KAUR",
-      description: "There are many girls in my village who never got a chance to go to school. When villages are remote and your family struggles for basic needs every day, education no more remains a priority. This was my story too. I never had any interest in my studies...",
-      image: "https://www.smilefoundationindia.org/wp-content/uploads/2023/05/7.png.webp",
-      fullStory: "HARSIMRAN KAUR\n\n“There are many girls in my village who never got a chance to go to school. When villages are remote and your family struggles for basic needs every day, education no more remains a priority. This was my story too. I never had any interest in my studies. I ignored the lessons taught and often skipped classes. Regardless of all these, my teachers never gave up on me.\n\nThey started giving me responsibilities– making me participate in all co-curricular activities and organising school events. And just like that I started to enjoy learning and being at school. My parents were the happiest when I was ranked among the highest scorers in class 8. I hope to make my parents and teachers even more proud in the near future.”\n\nHarsimran is a student of Class 11th at Smile Foundation's Mission Education centre, MDPS in Amritsar, Punjab."
-    }
+   
   ];
 
   // Auto-advance slides every 3 seconds
@@ -158,10 +164,6 @@ const Education = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
   };
 
-  const goBackToPrograms = () => {
-    navigate('/programs');
-  };
-
   const openStoryModal = (story) => {
     setSelectedStory(story);
   };
@@ -176,8 +178,11 @@ const Education = () => {
         {`
           .education-page {
             min-height: 100vh;
-            background-color: #f9fafb;
-          }          
+            background-color: ${darkMode ? '#1a202c' : '#f9fafb'};
+            color: ${darkMode ? '#e2e8f0' : '#000000'};
+            transition: background-color 0.3s ease, color 0.3s ease;
+          }
+          
           .carousel-section {
             position: relative;
             width: 100%;
@@ -283,24 +288,6 @@ const Education = () => {
             margin: 0 auto;
           }
           
-          .back-button {
-            margin-top: 2rem;
-            padding: 0.75rem 1.5rem;
-            background-color: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 2px solid white;
-            border-radius: 30px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-          }
-          
-          .back-button:hover {
-            background-color: white;
-            color: #333;
-          }
-          
           .content-section {
             width: 100%;
             padding: 80px 0;
@@ -309,7 +296,7 @@ const Education = () => {
           .section-title {
             font-size: 2.5rem;
             font-weight: 700;
-            color: #1e40af;
+            color: ${darkMode ? '#63b3ed' : '#1e40af'};
             margin-bottom: 1rem;
             text-align: center;
           }
@@ -317,14 +304,14 @@ const Education = () => {
           .section-subtitle {
             font-size: 1.5rem;
             font-weight: 600;
-            color: #4b5563;
+            color: ${darkMode ? '#a0aec0' : '#4b5563'};
             margin-bottom: 2rem;
             text-align: center;
           }
           
           .description {
             font-size: 1.1rem;
-            color: #4b5563;
+            color: ${darkMode ? '#cbd5e0' : '#4b5563'};
             line-height: 1.6;
             margin: 0 auto 3rem;
             text-align: center;
@@ -336,7 +323,7 @@ const Education = () => {
             display: flex;
             flex-direction: column;
             margin-bottom: 3rem;
-            background-color: white;
+            background-color: ${darkMode ? '#2d3748' : 'white'};
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -346,19 +333,19 @@ const Education = () => {
           .what-we-do-header {
             padding: 40px;
             text-align: center;
-            background-color: #f0f9ff;
+            background-color: ${darkMode ? '#4a5568' : '#f0f9ff'};
           }
           
           .what-we-do-title {
             font-size: 2.2rem;
             font-weight: 700;
-            color: #1e40af;
+            color: ${darkMode ? '#63b3ed' : '#1e40af'};
             margin-bottom: 1.5rem;
           }
           
           .what-we-do-text {
             font-size: 1.1rem;
-            color: #4b5563;
+            color: ${darkMode ? '#e2e8f0' : '#4b5563'};
             line-height: 1.6;
             max-width: 800px;
             margin: 0 auto;
@@ -372,7 +359,7 @@ const Education = () => {
             overflow-x: auto;
             gap: 15px;
             scrollbar-width: thin;
-            scrollbar-color: #93c5fd #f0f9ff;
+            scrollbar-color: ${darkMode ? '#4a5568' : '#93c5fd'} ${darkMode ? '#2d3748' : '#f0f9ff'};
           }
           
           .education-flow::-webkit-scrollbar {
@@ -380,12 +367,12 @@ const Education = () => {
           }
           
           .education-flow::-webkit-scrollbar-track {
-            background: #f0f9ff;
+            background: ${darkMode ? '#2d3748' : '#f0f9ff'};
             border-radius: 4px;
           }
           
           .education-flow::-webkit-scrollbar-thumb {
-            background-color: #93c5fd;
+            background-color: ${darkMode ? '#4a5568' : '#93c5fd'};
             border-radius: 4px;
           }
           
@@ -396,7 +383,7 @@ const Education = () => {
             min-width: 250px;
             padding: 25px 20px;
             border-radius: 12px;
-            background-color: #f0f9ff;
+            background-color: ${darkMode ? '#4a5568' : '#f0f9ff'};
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
@@ -410,23 +397,23 @@ const Education = () => {
           .flow-icon {
             width: 100px;
             height: 100px;
-            background-color: #dbeafe;
+            background-color: ${darkMode ? '#2d3748' : '#dbeafe'};
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 20px;
-            color: #1e40af;
+            color: ${darkMode ? '#63b3ed' : '#1e40af'};
           }
           
           .flow-title {
             font-size: 1.1rem;
             font-weight: 600;
-            color: #1e40af;
+            color: ${darkMode ? '#e2e8f0' : '#1e40af'};
           }
           
           .flow-arrow {
-            color: #93c5fd;
+            color: ${darkMode ? '#718096' : '#93c5fd'};
             font-size: 2.5rem;
             display: flex;
             align-items: center;
@@ -435,7 +422,7 @@ const Education = () => {
           }
           
           .approach-section {
-            background-color: white;
+            background-color: ${darkMode ? '#2d3748' : 'white'};
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -446,13 +433,13 @@ const Education = () => {
           .approach-header {
             padding: 30px;
             text-align: center;
-            background-color: #f0f9ff;
+            background-color: ${darkMode ? '#4a5568' : '#f0f9ff'};
           }
           
           .approach-title {
             font-size: 2.2rem;
             font-weight: 700;
-            color: #1e40af;
+            color: ${darkMode ? '#63b3ed' : '#1e40af'};
             margin-bottom: 1.5rem;
           }
           
@@ -474,19 +461,19 @@ const Education = () => {
           }
           
           .approach-item:nth-child(1) {
-            background-color: #fef3c7;
+            background-color: ${darkMode ? '#744210' : '#fef3c7'};
           }
           
           .approach-item:nth-child(2) {
-            background-color: #ddd6fe;
+            background-color: ${darkMode ? '#5b21b6' : '#ddd6fe'};
           }
           
           .approach-item:nth-child(3) {
-            background-color: #bbf7d0;
+            background-color: ${darkMode ? '#14532d' : '#bbf7d0'};
           }
           
           .approach-item:nth-child(4) {
-            background-color: #bfdbfe;
+            background-color: ${darkMode ? '#1e3a8a' : '#bfdbfe'};
           }
           
           .approach-item:hover {
@@ -503,17 +490,17 @@ const Education = () => {
             align-items: center;
             justify-content: center;
             margin: 0 auto 20px;
-            color: #1e40af;
+            color: ${darkMode ? '#63b3ed' : '#1e40af'};
           }
           
           .approach-item-title {
             font-size: 1.2rem;
             font-weight: 600;
-            color: #1e40af;
+            color: ${darkMode ? '#e2e8f0' : '#1e40af'};
           }
           
           .impact-section {
-            background-color: white;
+            background-color: ${darkMode ? '#2d3748' : 'white'};
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -524,13 +511,13 @@ const Education = () => {
           .impact-header {
             padding: 30px;
             text-align: center;
-            background-color: #f0f9ff;
+            background-color: ${darkMode ? '#4a5568' : '#f0f9ff'};
           }
           
           .impact-title {
             font-size: 2.2rem;
             font-weight: 700;
-            color: #1e40af;
+            color: ${darkMode ? '#63b3ed' : '#1e40af'};
             margin-bottom: 1.5rem;
           }
           
@@ -570,18 +557,18 @@ const Education = () => {
           .stat-value {
             font-size: 2rem;
             font-weight: 700;
-            color: #1e40af;
+            color: ${darkMode ? '#63b3ed' : '#1e40af'};
             margin-right: 15px;
             min-width: 120px;
           }
           
           .stat-label {
             font-size: 1.1rem;
-            color: #4b5563;
+            color: ${darkMode ? '#e2e8f0' : '#4b5563'};
           }
           
           .reach-section {
-            background-color: white;
+            background-color: ${darkMode ? '#2d3748' : 'white'};
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -592,13 +579,13 @@ const Education = () => {
           .reach-header {
             padding: 30px;
             text-align: center;
-            background-color: #f0f9ff;
+            background-color: ${darkMode ? '#4a5568' : '#f0f9ff'};
           }
           
           .reach-title {
             font-size: 2.2rem;
             font-weight: 700;
-            color: #1e40af;
+            color: ${darkMode ? '#63b3ed' : '#1e40af'};
             margin-bottom: 1.5rem;
           }
           
@@ -649,29 +636,29 @@ const Education = () => {
           .reach-value {
             font-size: 1.8rem;
             font-weight: 700;
-            color: #1e40af;
+            color: ${darkMode ? '#63b3ed' : '#1e40af'};
             margin-bottom: 5px;
           }
           
           .reach-label {
             font-size: 1.1rem;
-            color: #4b5563;
+            color: ${darkMode ? '#e2e8f0' : '#4b5563'};
             text-align: center;
           }
           
           .donation-info {
             font-size: 0.9rem;
-            color: #1e40af;
+            color: ${darkMode ? '#63b3ed' : '#1e40af'};
             font-weight: 600;
             margin-top: 8px;
             padding: 4px 8px;
-            background-color: #dbeafe;
+            background-color: ${darkMode ? '#2c5282' : '#dbeafe'};
             border-radius: 12px;
             display: inline-block;
           }
           
           .stories-section {
-            background-color: #f0fdf4;
+            background-color: ${darkMode ? '#2d3748' : '#f0fdf4'};
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -682,13 +669,13 @@ const Education = () => {
           .stories-header {
             padding: 30px;
             text-align: center;
-            background-color: #dcfce7;
+            background-color: ${darkMode ? '#14532d' : '#dcfce7'};
           }
           
           .stories-title {
             font-size: 2.2rem;
             font-weight: 700;
-            color: #166534;
+            color: ${darkMode ? '#86efac' : '#166534'};
             margin-bottom: 1.5rem;
           }
           
@@ -702,7 +689,7 @@ const Education = () => {
           
           .story-card {
             width: 350px;
-            background-color: white;
+            background-color: ${darkMode ? '#2d3748' : 'white'};
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -728,13 +715,13 @@ const Education = () => {
           .story-name {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #166534;
+            color: ${darkMode ? '#86efac' : '#166534'};
             margin-bottom: 10px;
           }
           
           .story-description {
             font-size: 1rem;
-            color: #4b5563;
+            color: ${darkMode ? '#e2e8f0' : '#4b5563'};
             margin-bottom: 15px;
             line-height: 1.5;
           }
@@ -742,7 +729,7 @@ const Education = () => {
           .read-more-button {
             display: inline-block;
             padding: 8px 16px;
-            background-color: #166534;
+            background-color: ${darkMode ? '#14532d' : '#166534'};
             color: white;
             border: none;
             border-radius: 20px;
@@ -753,7 +740,7 @@ const Education = () => {
           }
           
           .read-more-button:hover {
-            background-color: #14532d;
+            background-color: ${darkMode ? '#0f172a' : '#14532d'};
           }
           
           /* Modal Styles */
@@ -772,7 +759,7 @@ const Education = () => {
           }
           
           .modal-content {
-            background-color: white;
+            background-color: ${darkMode ? '#2d3748' : 'white'};
             border-radius: 12px;
             max-width: 800px;
             width: 100%;
@@ -789,7 +776,7 @@ const Education = () => {
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: #4b5563;
+            color: ${darkMode ? '#e2e8f0' : '#4b5563'};
             z-index: 10;
           }
           
@@ -808,13 +795,13 @@ const Education = () => {
           .modal-title {
             font-size: 2rem;
             font-weight: 700;
-            color: #166534;
+            color: ${darkMode ? '#86efac' : '#166534'};
             margin-bottom: 20px;
           }
           
           .modal-text {
             font-size: 1.1rem;
-            color: #4b5563;
+            color: ${darkMode ? '#e2e8f0' : '#4b5563'};
             line-height: 1.7;
             white-space: pre-line;
           }
@@ -1061,9 +1048,6 @@ const Education = () => {
           <div className="content-overlay">
             <h1>EDUCATION IS EMPOWERMENT</h1>
             <p>Transforming lives through knowledge and opportunity</p>
-            <button className="back-button" onClick={goBackToPrograms}>
-              Back to Programs
-            </button>
           </div>
         </div>
         
@@ -1135,7 +1119,7 @@ const Education = () => {
             <div className="impact-content">
               <div 
                 className="impact-image"
-                style={{ backgroundImage: `url(https://z-cdn-media.chatglm.cn/files/630bce81-0329-43e3-a454-c26a49650300.png?auth_key=1866162344-7a106d1b72a04acd8ee481cd2a83c52c-0-b5112988cdd1451d3f9009e7fda9cacc)` }}
+                style={{ backgroundImage: `url(${impactImage})` }}
               ></div>
               <div className="impact-stats">
                 {impactStats.map((stat, index) => (
