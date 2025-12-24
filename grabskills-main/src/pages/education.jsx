@@ -15,7 +15,7 @@ import storyArjun from "../assets/story-arjun.webp";
 import storySanjana from "../assets/story-sanjana.webp";
 import storyBasheer from "../assets/story-basheer.webp";
 
-const Education = ({ darkMode }) => {
+const Education = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedStory, setSelectedStory] = useState(null);
   
@@ -178,8 +178,8 @@ const Education = ({ darkMode }) => {
         {`
           .education-page {
             min-height: 100vh;
-            background-color: ${darkMode ? '#1a202c' : '#f9fafb'};
-            color: ${darkMode ? '#e2e8f0' : '#000000'};
+            background-color: #f9fafb;
+            color: #000000;
             transition: background-color 0.3s ease, color 0.3s ease;
           }
           
@@ -296,7 +296,7 @@ const Education = ({ darkMode }) => {
           .section-title {
             font-size: 2.5rem;
             font-weight: 700;
-            color: ${darkMode ? '#63b3ed' : '#1e40af'};
+            color: #1e40af;
             margin-bottom: 1rem;
             text-align: center;
           }
@@ -304,14 +304,14 @@ const Education = ({ darkMode }) => {
           .section-subtitle {
             font-size: 1.5rem;
             font-weight: 600;
-            color: ${darkMode ? '#a0aec0' : '#4b5563'};
+            color: #4b5563;
             margin-bottom: 2rem;
             text-align: center;
           }
           
           .description {
             font-size: 1.1rem;
-            color: ${darkMode ? '#cbd5e0' : '#4b5563'};
+            color: #4b5563;
             line-height: 1.6;
             margin: 0 auto 3rem;
             text-align: center;
@@ -323,7 +323,7 @@ const Education = ({ darkMode }) => {
             display: flex;
             flex-direction: column;
             margin-bottom: 3rem;
-            background-color: ${darkMode ? '#2d3748' : 'white'};
+            background-color: white;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -333,19 +333,19 @@ const Education = ({ darkMode }) => {
           .what-we-do-header {
             padding: 40px;
             text-align: center;
-            background-color: ${darkMode ? '#4a5568' : '#f0f9ff'};
+            background-color: #f0f9ff;
           }
           
           .what-we-do-title {
             font-size: 2.2rem;
             font-weight: 700;
-            color: ${darkMode ? '#63b3ed' : '#1e40af'};
+            color: #1e40af;
             margin-bottom: 1.5rem;
           }
           
           .what-we-do-text {
             font-size: 1.1rem;
-            color: ${darkMode ? '#e2e8f0' : '#4b5563'};
+            color: #4b5563;
             line-height: 1.6;
             max-width: 800px;
             margin: 0 auto;
@@ -359,7 +359,7 @@ const Education = ({ darkMode }) => {
             overflow-x: auto;
             gap: 15px;
             scrollbar-width: thin;
-            scrollbar-color: ${darkMode ? '#4a5568' : '#93c5fd'} ${darkMode ? '#2d3748' : '#f0f9ff'};
+            scrollbar-color: #93c5fd #f0f9ff;
           }
           
           .education-flow::-webkit-scrollbar {
@@ -367,12 +367,12 @@ const Education = ({ darkMode }) => {
           }
           
           .education-flow::-webkit-scrollbar-track {
-            background: ${darkMode ? '#2d3748' : '#f0f9ff'};
+            background: #f0f9ff;
             border-radius: 4px;
           }
           
           .education-flow::-webkit-scrollbar-thumb {
-            background-color: ${darkMode ? '#4a5568' : '#93c5fd'};
+            background-color: #93c5fd;
             border-radius: 4px;
           }
           
@@ -383,7 +383,7 @@ const Education = ({ darkMode }) => {
             min-width: 250px;
             padding: 25px 20px;
             border-radius: 12px;
-            background-color: ${darkMode ? '#4a5568' : '#f0f9ff'};
+            background-color: #f0f9ff;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
@@ -397,23 +397,23 @@ const Education = ({ darkMode }) => {
           .flow-icon {
             width: 100px;
             height: 100px;
-            background-color: ${darkMode ? '#2d3748' : '#dbeafe'};
+            background-color: #dbeafe;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 20px;
-            color: ${darkMode ? '#63b3ed' : '#1e40af'};
+            color: #1e40af;
           }
           
           .flow-title {
             font-size: 1.1rem;
             font-weight: 600;
-            color: ${darkMode ? '#e2e8f0' : '#1e40af'};
+            color: #1e40af;
           }
           
           .flow-arrow {
-            color: ${darkMode ? '#718096' : '#93c5fd'};
+            color: #93c5fd;
             font-size: 2.5rem;
             display: flex;
             align-items: center;
@@ -422,7 +422,7 @@ const Education = ({ darkMode }) => {
           }
           
           .approach-section {
-            background-color: ${darkMode ? '#2d3748' : 'white'};
+            background-color: white;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -433,13 +433,13 @@ const Education = ({ darkMode }) => {
           .approach-header {
             padding: 30px;
             text-align: center;
-            background-color: ${darkMode ? '#4a5568' : '#f0f9ff'};
+            background-color: #f0f9ff;
           }
           
           .approach-title {
             font-size: 2.2rem;
             font-weight: 700;
-            color: ${darkMode ? '#63b3ed' : '#1e40af'};
+            color: #1e40af;
             margin-bottom: 1.5rem;
           }
           
@@ -461,19 +461,19 @@ const Education = ({ darkMode }) => {
           }
           
           .approach-item:nth-child(1) {
-            background-color: ${darkMode ? '#744210' : '#fef3c7'};
+            background-color: #fef3c7;
           }
           
           .approach-item:nth-child(2) {
-            background-color: ${darkMode ? '#5b21b6' : '#ddd6fe'};
+            background-color: #ddd6fe;
           }
           
           .approach-item:nth-child(3) {
-            background-color: ${darkMode ? '#14532d' : '#bbf7d0'};
+            background-color: #bbf7d0;
           }
           
           .approach-item:nth-child(4) {
-            background-color: ${darkMode ? '#1e3a8a' : '#bfdbfe'};
+            background-color: #bfdbfe;
           }
           
           .approach-item:hover {
@@ -490,17 +490,17 @@ const Education = ({ darkMode }) => {
             align-items: center;
             justify-content: center;
             margin: 0 auto 20px;
-            color: ${darkMode ? '#63b3ed' : '#1e40af'};
+            color: #1e40af;
           }
           
           .approach-item-title {
             font-size: 1.2rem;
             font-weight: 600;
-            color: ${darkMode ? '#e2e8f0' : '#1e40af'};
+            color: #1e40af;
           }
           
           .impact-section {
-            background-color: ${darkMode ? '#2d3748' : 'white'};
+            background-color: white;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -511,13 +511,13 @@ const Education = ({ darkMode }) => {
           .impact-header {
             padding: 30px;
             text-align: center;
-            background-color: ${darkMode ? '#4a5568' : '#f0f9ff'};
+            background-color: #f0f9ff;
           }
           
           .impact-title {
             font-size: 2.2rem;
             font-weight: 700;
-            color: ${darkMode ? '#63b3ed' : '#1e40af'};
+            color: #1e40af;
             margin-bottom: 1.5rem;
           }
           
@@ -557,18 +557,18 @@ const Education = ({ darkMode }) => {
           .stat-value {
             font-size: 2rem;
             font-weight: 700;
-            color: ${darkMode ? '#63b3ed' : '#1e40af'};
+            color: #1e40af;
             margin-right: 15px;
             min-width: 120px;
           }
           
           .stat-label {
             font-size: 1.1rem;
-            color: ${darkMode ? '#e2e8f0' : '#4b5563'};
+            color: #4b5563;
           }
           
           .reach-section {
-            background-color: ${darkMode ? '#2d3748' : 'white'};
+            background-color: white;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -579,13 +579,13 @@ const Education = ({ darkMode }) => {
           .reach-header {
             padding: 30px;
             text-align: center;
-            background-color: ${darkMode ? '#4a5568' : '#f0f9ff'};
+            background-color: #f0f9ff;
           }
           
           .reach-title {
             font-size: 2.2rem;
             font-weight: 700;
-            color: ${darkMode ? '#63b3ed' : '#1e40af'};
+            color: #1e40af;
             margin-bottom: 1.5rem;
           }
           
@@ -636,29 +636,29 @@ const Education = ({ darkMode }) => {
           .reach-value {
             font-size: 1.8rem;
             font-weight: 700;
-            color: ${darkMode ? '#63b3ed' : '#1e40af'};
+            color: #1e40af;
             margin-bottom: 5px;
           }
           
           .reach-label {
             font-size: 1.1rem;
-            color: ${darkMode ? '#e2e8f0' : '#4b5563'};
+            color: #4b5563;
             text-align: center;
           }
           
           .donation-info {
             font-size: 0.9rem;
-            color: ${darkMode ? '#63b3ed' : '#1e40af'};
+            color: #1e40af;
             font-weight: 600;
             margin-top: 8px;
             padding: 4px 8px;
-            background-color: ${darkMode ? '#2c5282' : '#dbeafe'};
+            background-color: #dbeafe;
             border-radius: 12px;
             display: inline-block;
           }
           
           .stories-section {
-            background-color: ${darkMode ? '#2d3748' : '#f0fdf4'};
+            background-color: #f0fdf4;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -669,13 +669,13 @@ const Education = ({ darkMode }) => {
           .stories-header {
             padding: 30px;
             text-align: center;
-            background-color: ${darkMode ? '#14532d' : '#dcfce7'};
+            background-color: #dcfce7;
           }
           
           .stories-title {
             font-size: 2.2rem;
             font-weight: 700;
-            color: ${darkMode ? '#86efac' : '#166534'};
+            color: #166534;
             margin-bottom: 1.5rem;
           }
           
@@ -689,7 +689,7 @@ const Education = ({ darkMode }) => {
           
           .story-card {
             width: 350px;
-            background-color: ${darkMode ? '#2d3748' : 'white'};
+            background-color: white;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -715,13 +715,13 @@ const Education = ({ darkMode }) => {
           .story-name {
             font-size: 1.5rem;
             font-weight: 700;
-            color: ${darkMode ? '#86efac' : '#166534'};
+            color: #166534;
             margin-bottom: 10px;
           }
           
           .story-description {
             font-size: 1rem;
-            color: ${darkMode ? '#e2e8f0' : '#4b5563'};
+            color: #4b5563;
             margin-bottom: 15px;
             line-height: 1.5;
           }
@@ -729,7 +729,7 @@ const Education = ({ darkMode }) => {
           .read-more-button {
             display: inline-block;
             padding: 8px 16px;
-            background-color: ${darkMode ? '#14532d' : '#166534'};
+            background-color: #166534;
             color: white;
             border: none;
             border-radius: 20px;
@@ -740,7 +740,7 @@ const Education = ({ darkMode }) => {
           }
           
           .read-more-button:hover {
-            background-color: ${darkMode ? '#0f172a' : '#14532d'};
+            background-color: #14532d;
           }
           
           /* Modal Styles */
@@ -759,7 +759,7 @@ const Education = ({ darkMode }) => {
           }
           
           .modal-content {
-            background-color: ${darkMode ? '#2d3748' : 'white'};
+            background-color: white;
             border-radius: 12px;
             max-width: 800px;
             width: 100%;
@@ -776,7 +776,7 @@ const Education = ({ darkMode }) => {
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: ${darkMode ? '#e2e8f0' : '#4b5563'};
+            color: #4b5563;
             z-index: 10;
           }
           
@@ -795,13 +795,13 @@ const Education = ({ darkMode }) => {
           .modal-title {
             font-size: 2rem;
             font-weight: 700;
-            color: ${darkMode ? '#86efac' : '#166534'};
+            color: #166534;
             margin-bottom: 20px;
           }
           
           .modal-text {
             font-size: 1.1rem;
-            color: ${darkMode ? '#e2e8f0' : '#4b5563'};
+            color: #4b5563;
             line-height: 1.7;
             white-space: pre-line;
           }
