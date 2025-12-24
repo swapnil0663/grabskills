@@ -1,6 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+// Import local images from assets folder
+import bg1 from "../assets/background1.jpg";
+import bg2 from "../assets/background2.jpg";
+import bg3 from "../assets/background3.jpg";
+import bg4 from "../assets/background4.webp";
+
+import gallery1 from "../assets/gallery1.jpg";
+import gallery2 from "../assets/gallery2.jpg";
+import gallery3 from "../assets/gallery3.jpg";
+import gallery4 from "../assets/gallery4.jpg";
+import gallery5 from "../assets/gallery5.jpg";
+import gallery6 from "../assets/gallery6.jpg";
+
+import story1 from "../assets/story1.jpg";
+import story2 from "../assets/story2.webp";
+import story3 from "../assets/story3.jpg";
+
+import impactImg from "../assets/impact1.png";
+
 const WomenEmpowerment = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -8,55 +27,49 @@ const WomenEmpowerment = () => {
   const navigate = useNavigate();
   
   // Array of background images for carousel
-  const backgroundImages = [
-    'https://www.shutterstock.com/image-photo/generate-ai-image-theme-india-260nw-2663275035.jpg',
-    'https://www.smilefoundationindia.org/wp-content/uploads/2023/07/9-scaled.jpg',
-    'https://plutusias.com/wp-content/uploads/2024/03/p2-1-2.jpg',
-    'https://media.licdn.com/dms/image/v2/C5622AQGMFzGEbupyZg/feedshare-shrink_800/feedshare-shrink_800/0/1646757643471?e=2147483647&v=beta&t=wIte-G1s9Isr7VRv7lCMrPM_7xVVs9hVHmuWidRwchc'
-  ];
+  const backgroundImages = [bg1, bg2, bg3, bg4];
 
-  // Array of images and descriptions for the gallery
+  // FIXED: Renamed key 'images' to 'image' for consistency
   const galleryImages = [
     {
-      url: 'https://z-cdn-media.chatglm.cn/files/e6bf8cbc-a373-4924-95d5-9d1eec512e8b.png?auth_key=1866408407-085cb54cfeaf4081a5a882b461ea57e5-0-1afcec0efb63243434ae4b04ae3f83ac',
+      image: gallery1,
       title: "Community Gathering",
       description: "Women from local communities come together to participate in empowerment workshops and awareness sessions. These gatherings provide a platform for sharing experiences, learning new skills, and building supportive networks."
     },
     {
-      url: 'https://z-cdn-media.chatglm.cn/files/3c01e86d-d74f-4339-8e77-c381550bfe2f.png?auth_key=1866408407-02f350e06c694ef7ada15d3c01cfe161-0-7cd83015f718beaddbd5c87d16619dcd',
+      image: gallery2,
       title: "Knowledge Sharing",
       description: "Women engage in interactive knowledge sharing sessions where they learn about their rights, health, nutrition, and financial literacy. These sessions are designed to empower women with information and practical skills."
     },
     {
-      url: 'https://z-cdn-media.chatglm.cn/files/b8efd1af-bb81-484e-89d1-e389fac1bec9.png?auth_key=1866408407-fca3b73ccbb74e41a2b2290c38fb0860-0-f1d0c9e5f372a8e33ead17fda8e2611d',
+      image: gallery3,
       title: "Swabhiman Initiative",
       description: "The Swabhiman initiative collaborates with ASHA and Anganwadi workers to reach marginalized women. This program focuses on health interventions, skill development, and creating awareness about women's rights."
     },
     {
-      url: 'https://z-cdn-media.chatglm.cn/files/fbc43c45-2d9d-4f64-98e5-3632a12ecd30.png?auth_key=1866411142-26c679325b3d412a8eb4cad7ae855c12-0-b136586ed48d5ee7843a98eac61f4318',
+      image: gallery4,
       title: "Reproductive Health",
       description: "Specialized sessions on reproductive and child health are conducted to educate women about maternal health, family planning, and childcare. These sessions help women make informed decisions about their health and well-being."
     },
     {
-      url: 'https://z-cdn-media.chatglm.cn/files/420e7666-fcf9-4e24-8f71-f87ad77cd5f6.png?auth_key=1866421125-4b2025ae54d0468c86b92455ba6c24a2-0-2d9f2f83ed9bb194f799ad69c1c313a3',
+      image: gallery5,
       title: "SUSTAINABILITY IN COMMUNITIES",
       description: "Swabhiman by far has been able to affirm through community actions and advocacy that though women face numerous socio-cultural challenges coming from their prescribed societal roles and ascribed status within the family, community, and society, contravening such challenges is very much possible through creation of opportunities and enabling environment. The mainstay of Swabhiman programme's community outreach is through Change Agents, Peers Educators, Community Health Educators and Swabhiman Health Volunteers. These change agents are identified from the community and empowered through regular training sessions on relevant issues. They further educate and spread awareness among their peers in the community. Such interventions and innovations lead to a comprehensive approach that addresses social, economic, and health challenges, promoting sustainable development, and leaving a positive and lasting impact on individuals, communities, and society as a whole."
     },
     {
-      url: 'https://z-cdn-media.chatglm.cn/files/abad9df3-365a-4ea3-8262-79791eb9f65e.png?auth_key=1866421125-e9f001ab81b84b748e7b4821f146a266-0-0226b9a25085e29b66629a1f8b968944',
+      image: gallery6,
       title: "GOVT. CONVERGENCE & SYSTEM STRENGTHENING",
       description: "One of the major interventions under Swabhiman programme is networking with government institutions to enhance community awareness. The community institutions with which the networking is undertaken are Integrated Child Health Scheme (ICDS), health departments, educational institutions and panchayats. The fostering of network with such institutions has qualitatively impacted the outcome of efforts and activities, and Swabhiman has always kept these organizations under the information loop ensuring possibilities of future convergence and relationships. Networking is also done with 3-level structures of the health administration for seamless implementation of its interventions:<br><br><strong>a) Primary level</strong>—working closely with Auxiliary Nurse Midwives (ANMs) and Accredited Social health Activists (ASHA) workers in the community<br><br><strong>b) Second level</strong>—coordination with Primary Health Centres (PHCs)/dispensaries<br><br><strong>c) Third level</strong>—contact coordination with medical personnel at specialty hospital/institutions"
     }
   ];
 
-  // Stories of Change data - Updated with correct images
+  // FIXED: Standardized keys to 'image' (removed 'images')
   const stories = [
     {
       id: 1,
       name: "SHYAMA",
       location: "HARYANA",
-      // Updated image URL for SHYAMA - Woman with red headscarf and blue top
-      imageUrl: "https://www.smilefoundationindia.org/wp-content/uploads/2023/07/Shyama.jpg.webp",
+      image: story1, 
       shortDescription: "Covid brought many problems with it– both outside and within our home. My husband who used to work at a tailoring shop lost his job. It became very hard to make ends meet…",
       fullDescription: "Covid brought many problems with it– both outside and within our home. My husband who used to work at a tailoring shop lost his job. It became very hard to make ends meet. We could not even pay the school fees of our daughter. This led to many fights at home and I could see my family falling apart. At that time, the Swabhiman community mobilizer started visiting me, asking about my health and well being. I started attending the meetings where we were taught about healthcare, financial literacy, and becoming self dependent. I gradually became more confident and encouraged my husband to start working from our home. I too learned sewing and got much-needed support to get a tailoring machine. After that, we started receiving orders and getting back on our feet. During Covid, I also taught how to make masks to other women in my slum who needed some extra income. Now, thankfully, things are much better."
     },
@@ -64,8 +77,7 @@ const WomenEmpowerment = () => {
       id: 2,
       name: "YASHODA",
       location: "KARNATAKA",
-      // Updated image URL for YASHODA - Woman sitting outdoors with colorful patterned top
-      imageUrl: "https://www.smilefoundationindia.org/wp-content/uploads/2023/07/Yashoda-2-1-e1689926256432-298x300.jpg.webp",
+      image: story2,
       shortDescription: "Before the pandemic, Yashoda was a young mother to a one-year old, living with her cab driver husband in Bengaluru. However, her husband lost his job in the lockdown…",
       fullDescription: "Before the pandemic, Yashoda was a young mother to a one-year old, living with her cab driver husband in Bengaluru. However, her husband lost his job in the lockdown and things turned bitter due to the resultant financial constraints. Yashoda, however, fought back. She joined the 'Entrepreneur Development Training Programme' of Smile Foundation which enables women to start their own ventures. Yashoda not only completed the training herself, but also gathered women in her community who were suffering like her. Soon she emerged as a leader of her peer group and set up a business of handmade organic cosmetics with them. Since then the group has started making lip balm, kajal, bathing salt, bathing powder and tooth powder. The enterprise has now been registered as \"Kadamba Naturals\". Yashoda wants to expand her business and support other women too in becoming self-reliant."
     },
@@ -73,8 +85,7 @@ const WomenEmpowerment = () => {
       id: 3,
       name: "ISHWATI",
       location: "MAHARASHTRA",
-      // Updated image URL for ISHWATI - Woman in blue printed dress with pink shawl
-      imageUrl: "https://www.smilefoundationindia.org/wp-content/uploads/2023/07/Ishwati.jpg.webp",
+      image: story3,
       shortDescription: "Ishwati was a daily wage labourer living with her family of six in Maharashtra. After a day's work her family was barely able to make ends meet. When Smile Foundation began its Swabhiman…",
       fullDescription: "Ishwati was a daily wage labourer living with her family of six in Maharashtra. After a day's work her family was barely able to make ends meet. When Smile Foundation began its Swabhiman programme, she was one of the first to come on board and helped mobilize other women from her community. Initially, Ishwati took up vegetable cultivation in her backyard. The two-pronged benefit being that not only does she run her own business, but also uses nutritious vegetables to feed her family. Slowly Ishwati mobilized other women of her community and formed a Self Help Group which now runs the vegetable cultivation business. During the Covid-19 lockdown, it was this essential business which helped their families survive. Ishwati is a true change-maker, who has led women from her community towards financial independence and confidence."
     }
@@ -124,37 +135,94 @@ const WomenEmpowerment = () => {
     setSelectedStory(null);
   };
 
-  // Impact Section Component - Modified to show only the image at full size
+  // Impact Section Component
   const ImpactSection = () => {
-    // Using the image URL directly since we don't have the local asset
-    const impactImg = "https://z-cdn-media.chatglm.cn/files/3eba7c11-5b30-48f5-a471-1a37b1488171.png?auth_key=1866421436-10fa2e1cac4e485592564c24aa0f8d16-0-011a8a077f96a500493ecf5ca1128087";
-
     const styles = {
       container: {
         width: "100%",
-        padding: "0",
-        margin: "40px 0 0",
-        backgroundColor: "#f0f9ff",
+        padding: "60px 20px",
+        margin: "40px 0",
+        backgroundColor: "#f0fdf4",
         display: "flex",
-        justifyContent: "center",
+        flexDirection: "column",
         alignItems: "center",
+        justifyContent: "center",
         overflow: "hidden"
       },
       image: {
         width: "100%",
+        maxWidth: "800px",
         height: "auto",
         display: "block",
-        objectFit: "contain"
+        objectFit: "contain",
+        marginBottom: "40px"
+      },
+      statsContainer: {
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        gap: "30px",
+        width: "100%",
+        maxWidth: "1000px",
+        marginTop: "20px"
+      },
+      statItem: {
+        flex: "1",
+        minWidth: "200px",
+        maxWidth: "300px",
+        backgroundColor: "#ffffff",
+        borderRadius: "12px",
+        padding: "25px 20px",
+        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.05)",
+        textAlign: "center",
+        transition: "transform 0.3s ease, box-shadow 0.3s ease"
+      },
+      statNumber: {
+        fontSize: "2.5rem",
+        fontWeight: "700",
+        color: "#be185d",
+        marginBottom: "10px"
+      },
+      statLabel: {
+        fontSize: "1rem",
+        color: "#4b5563",
+        lineHeight: "1.4"
+      },
+      title: {
+        fontSize: "2.5rem",
+        fontWeight: "700",
+        color: "#166534",
+        marginBottom: "30px",
+        textAlign: "center"
       }
     };
 
     return (
       <div style={styles.container}>
+        <h2 style={styles.title}>Impact 2023-24</h2>
         <img
           src={impactImg}
           alt="Impact"
           style={styles.image}
         />
+        <div style={styles.statsContainer}>
+          <div style={styles.statItem}>
+            <div style={styles.statNumber}>2,00,000+</div>
+            <div style={styles.statLabel}>women impacted through Swabhiman programme</div>
+          </div>
+          <div style={styles.statItem}>
+            <div style={styles.statNumber}>1,00,000</div>
+            <div style={styles.statLabel}>women reached</div>
+          </div>
+          <div style={styles.statItem}>
+            <div style={styles.statNumber}>92,000+</div>
+            <div style={styles.statLabel}>women sensitised on reproductive and child health</div>
+          </div>
+          <div style={styles.statItem}>
+            <div style={styles.statNumber}>82</div>
+            <div style={styles.statLabel}>women-led micro enterprises initiatives</div>
+          </div>
+        </div>
       </div>
     );
   };
@@ -619,6 +687,16 @@ const WomenEmpowerment = () => {
             .greeting-card-description {
               font-size: 1rem;
             }
+            
+            .statsContainer {
+              flex-direction: column;
+              align-items: center;
+            }
+            
+            .statItem {
+              width: 80%;
+              margin-bottom: 20px;
+            }
           }
         `}
       </style>
@@ -688,32 +766,31 @@ const WomenEmpowerment = () => {
             Swabhiman actively works to create a gender-equal society, engaging men and boys in the process of women empowerment.
           </p>
         </div>
-        
         {/* Gallery Section */}
         <div className="gallery-section">
           <h2 className="gallery-title">OUR INITIATIVES IN ACTION</h2>
-          
           <div className="gallery-grid">
-            {galleryImages.map((image, index) => (
+            {galleryImages.map((item, index) => (
               <div 
                 key={index}
                 className="gallery-item"
                 onClick={() => handleImageClick(index)}
               >
+                {/* FIXED: Changed src from item.url to item.image */}
                 <img 
-                  src={image.url} 
-                  alt={image.title}
+                  src={item.image} 
+                  alt={item.title}
                   className="gallery-image"
                 />
                 <div className="gallery-overlay">
-                  {image.title}
+                  {item.title}
                 </div>
               </div>
             ))}
           </div>
         </div>
         
-        {/* Impact Section - Full Size Image */}
+        {/* Impact Section */}
         <ImpactSection />
         
         {/* Stories of Change Section */}
@@ -724,8 +801,9 @@ const WomenEmpowerment = () => {
             <div className="stories-grid">
               {stories.map((story, index) => (
                 <div key={story.id} className="story-card">
+                  {/* FIXED: Changed src from story.imageUrl to story.image */}
                   <img 
-                    src={story.imageUrl} 
+                    src={story.image} 
                     alt={story.name}
                     className="story-image"
                   />
@@ -744,7 +822,6 @@ const WomenEmpowerment = () => {
             </div>
           </div>
         </div>
-        
         {/* Greeting Card Overlay */}
         {(selectedImage !== null || selectedStory !== null) && (
           <div className="greeting-card-overlay" onClick={closeGreetingCard}>
@@ -760,8 +837,9 @@ const WomenEmpowerment = () => {
               <div className="greeting-card-body">
                 {selectedImage !== null ? (
                   <>
+                   {/* FIXED: Changed src from galleryImages[selectedImage].url to .image */}
                     <img 
-                      src={galleryImages[selectedImage].url} 
+                      src={galleryImages[selectedImage].image} 
                       alt={galleryImages[selectedImage].title}
                       className="greeting-card-image"
                     />
@@ -772,8 +850,9 @@ const WomenEmpowerment = () => {
                   </>
                 ) : (
                   <>
+                    {/* FIXED: Changed src from stories[selectedStory].imageUrl to .image */}
                     <img 
-                      src={stories[selectedStory].imageUrl} 
+                      src={stories[selectedStory].image} 
                       alt={stories[selectedStory].name}
                       className="greeting-card-image"
                     />
@@ -793,5 +872,4 @@ const WomenEmpowerment = () => {
     </>
   );
 };
-
 export default WomenEmpowerment;
