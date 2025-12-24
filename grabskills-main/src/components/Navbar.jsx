@@ -16,7 +16,15 @@ export default function Navbar() {
     <div className="max-w-7xl mx-auto h-14 flex items-center justify-between px-8">
 
       {/* LOGO */}
-      <h1 className="text-xl font-bold text-green-600">
+      <h1 className="text-xl font-bold text-green-600 cursor-pointer" onClick={()=>{
+              navigate("/")
+              
+              const section=document.getElementById("homeTop");
+              if(section){
+                section.scrollIntoView({behavior:"smooth"});
+              }
+            
+            }}>
         NGO Foundation
       </h1>
 
