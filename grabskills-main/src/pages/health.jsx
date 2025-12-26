@@ -72,7 +72,7 @@ export default function Health() {
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           className="max-w-4xl mx-auto text-center"
         >
           <h2 className="text-4xl font-bold text--gray--900 dark:text-white">Why Health & Hygiene</h2>
@@ -92,7 +92,7 @@ export default function Health() {
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           className="max-w-5xl mx-auto"
         >
           <h2 className="text-4xl font-bold text-center mb-12 text--gray--900 dark:text-white">
@@ -137,7 +137,7 @@ export default function Health() {
             variants={focusItemLeft}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="relative flex items-center justify-end"
           >
             <div className="bg-sky-200 px-6 py-4 rounded-xl font-semibold text-right w-64">
@@ -153,7 +153,7 @@ export default function Health() {
         variants={imageReveal}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         className="col-span-12 md:col-span-4 flex justify-center relative"
       >
         <img
@@ -176,7 +176,7 @@ export default function Health() {
             variants={focusItemRight}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="relative flex items-center"
           >
             <span className="hidden md:block h-[2px] w-10 bg-green-400 mr-3"></span>
@@ -202,7 +202,7 @@ export default function Health() {
         <motion.div
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.8 }}
           className="grid md:grid-cols-2 gap-12 items-center bg-sky-100 dark:bg-gray-800 rounded-3xl p-10"
         >
@@ -224,7 +224,7 @@ export default function Health() {
         <motion.div
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.8 }}
           className="grid md:grid-cols-2 gap-12 items-center bg-green-100 dark:bg-gray-800 rounded-3xl p-10"
         >
@@ -246,7 +246,7 @@ export default function Health() {
         <motion.div
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.8 }}
           className="grid md:grid-cols-2 gap-12 items-center bg-cyan-100 dark:bg-gray-800 rounded-3xl p-10"
         >
@@ -267,7 +267,7 @@ export default function Health() {
         <motion.div
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.8 }}
           className="grid md:grid-cols-2 gap-12 items-center bg-green-100 dark:bg-gray-800 rounded-3xl p-10"
         >
@@ -288,7 +288,7 @@ export default function Health() {
         <motion.div
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.8 }}
           className="grid md:grid-cols-2 gap-12 items-center bg-cyan-100 dark:bg-gray-800 rounded-3xl p-10"
         >
