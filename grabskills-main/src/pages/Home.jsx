@@ -480,7 +480,8 @@ export default function Home() {
             {
               title: "Building Sustainable Communities",
               date: "March 2025",
-              desc: "How grassroots initiatives are transforming rural livelihoods."
+              desc: "How grassroots initiatives are transforming rural livelihoods.",
+              adr:"/SustainableCommunitiesBlog",
             },
             {
               title: "Education as a Catalyst for Change",
@@ -491,22 +492,26 @@ export default function Home() {
             {
               title: "Women Leading the Way",
               date: "January 2025",
-              desc: "Stories of women creating impact in their communities."
+              desc: "Stories of women creating impact in their communities.",
+              adr:"/WomenLeadingTheWayBlog",
             },
             {
               title: "Innovation in Social Development",
               date: "December 2024",
-              desc: "Using technology to solve real-world problems."
+              desc: "Using technology to solve real-world problems.",
+              adr:"/innovationBlog",
             },
             {
               title: "Health & Hygiene Awareness",
               date: "November 2024",
-              desc: "Small habits that lead to healthier communities."
+              desc: "Small habits that lead to healthier communities.",
+              adr:"/healthAwarenessBlog",
             },
             {
               title: "Climate Action at the Local Level",
               date: "October 2024",
-              desc: "How local actions contribute to global impact."
+              desc: "How local actions contribute to global impact.",
+              adr:"/climateactionBlog",
             }
           ].map((blog, index) => (
             <motion.div

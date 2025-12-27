@@ -14,6 +14,17 @@ import Womenempowerment from "./pages/women-empowerment";
 import Education from "./pages/education";
 import Rural from "./pages/rural-development";
 import EducationBlog from "./pages/EducationBlog";
+import ClimateActionBlog from "./pages/ClimateActionBlog";
+
+import HealthAwarenessBlog from "./pages/HealthAwarenessBlog";
+import SustainableCommunitiesBlog from "./pages/SustainableCommunitiesBlog";
+
+
+import WomenLeadingTheWayBlog from "./pages/WomenLeadingTheWayBlog";
+import InnovationBlog from "./pages/InnovationBlog";
+
+
+
 function App() {
   return (
     <BrowserRouter>
@@ -33,6 +44,13 @@ function App() {
            <Route path="/education" element={<Education />} />
            <Route path="/rural-development" element={<Rural />} />
            <Route path="/educationBlog" element={<EducationBlog />} />
+           <Route path="/climateactionBlog" element={<ClimateActionBlog />} />
+           <Route path="/SustainableCommunitiesBlog" element={<SustainableCommunitiesBlog />} />
+           <Route path="/healthAwarenessBlog" element={<HealthAwarenessBlog />} />
+           <Route path="/WomenLeadingTheWayBlog" element={<WomenLeadingTheWayBlog />} />
+           <Route path="/innovationBlog" element={<InnovationBlog />} />
+           
+          
         </Routes>
 
         <Footer />
