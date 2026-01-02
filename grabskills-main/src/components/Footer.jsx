@@ -4,13 +4,14 @@ import {
   FiInstagram, FiTwitter, FiFacebook, FiYoutube, 
   FiArrowUp, FiHeart, FiMapPin, FiMail 
 } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 
 
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-
+   const navigate = useNavigate();
  
 
   const footerLink = "text-gray-500 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 transition-all duration-300 cursor-pointer block py-1 hover:translate-x-2";
@@ -53,9 +54,10 @@ const Footer = () => {
           <div className="space-y-6">
             <h4 className="text-sm font-black uppercase tracking-[0.2em] text-gray-900 dark:text-white">Quick Links</h4>
             <ul className="space-y-3 font-medium">
-              <li className={footerLink} >Our Mission</li>
-              <li className={footerLink} >Latest Projects</li>
-              <li className={footerLink}>Volunteer Program</li>
+              <li className={footerLink} onClick={() => navigate("/about")}>About us</li>
+              <li className={footerLink} onClick={() => navigate("/contact")}>Contact us</li>
+              
+              <li className={footerLink} onClick={() => navigate("/contact")}>Volunteer details</li>
               
             </ul>
           </div>

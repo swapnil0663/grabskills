@@ -93,7 +93,7 @@ const ContactPage = () => {
               <h4 className="text-2xl font-black mb-2 relative z-10">Want to Volunteer?</h4>
               <p className="opacity-90 mb-6 relative z-10">Join our community of 500+ changemakers worldwide.</p>
               <button className="bg-white text-green-700 px-8 py-3 rounded-2xl font-black text-sm relative z-10 hover:bg-gray-100 transition-colors">
-                Apply Now
+                Send Mail 
               </button>
             </motion.div>
           </motion.div>
