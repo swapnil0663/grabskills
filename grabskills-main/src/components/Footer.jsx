@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   FiInstagram, FiTwitter, FiFacebook, FiYoutube, 
-  FiArrowUp, FiHeart, FiMapPin, FiMail 
+  FiArrowUp, FiHeart, FiMapPin,
 } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
 
@@ -15,6 +15,8 @@ const Footer = () => {
  
 
   const footerLink = "text-gray-500 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 transition-all duration-300 cursor-pointer block py-1 hover:translate-x-2";
+  const date= new Date();
+  const year=date.getFullYear();
 
   return (
     <footer className="relative bg-[#f8fafc] dark:bg-[#030712] pt-20 pb-10 overflow-hidden">
@@ -99,7 +101,7 @@ const Footer = () => {
         {/* BOTTOM BAR */}
         <div className="pt-10 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-gray-500 dark:text-gray-500 text-sm font-medium">
-            © 2024 NGO Foundation. Made with <FiHeart className="inline text-red-500" /> for the world.
+            © {year} NGO Foundation. Made with <FiHeart className="inline text-red-500" /> for the world.
           </p>
           
           {/* BACK TO TOP */}

@@ -1,4 +1,4 @@
-import { motion, useMotionValue, animate, useInView, useScroll, useTransform } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import educationImg from "../assets/eduicon.png";
@@ -96,33 +96,33 @@ function ProgramItem({ image, title, desc, titleColor, onClick }) {
 }
 
 /* Counter */
-function Counter({ value, suffix = "" }) {
-  const [display, setDisplay] = useState(0);
-  const count = useMotionValue(0);
+// function Counter({ value, suffix = "" }) {
+//   const [display, setDisplay] = useState(0);
+//   const count = useMotionValue(0);
 
-  useEffect(() => {
-    const controls = animate(count, value, {
-      duration: 2,
-      ease: "easeOut",
-      onUpdate(latest) {
-        setDisplay(Math.round(latest));
-      }
-    });
+//   useEffect(() => {
+//     const controls = animate(count, value, {
+//       duration: 2,
+//       ease: "easeOut",
+//       onUpdate(latest) {
+//         setDisplay(Math.round(latest));
+//       }
+//     });
 
-    return () => controls.stop();
-  }, [value]);
+//     return () => controls.stop();
+//   }, [value]);
 
-  return (
-    <motion.span
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: false }}
-    >
-      {display}
-      {suffix}
-    </motion.span>
-  );
-}
+//   return (
+//     <motion.span
+//       initial={{ opacity: 0 }}
+//       whileInView={{ opacity: 1 }}
+//       viewport={{ once: false }}
+//     >
+//       {display}
+//       {suffix}
+//     </motion.span>
+//   );
+// }
 
 
 
@@ -142,23 +142,23 @@ export default function Home() {
     }
   };
   // Animation Variants
-  const line1Variant = {
-    hidden: { x: "-100vw", opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: { type: "spring", damping: 20, stiffness: 50 }
-    }
-  };
+  // const line1Variant = {
+  //   hidden: { x: "-100vw", opacity: 0 },
+  //   visible: {
+  //     x: 0,
+  //     opacity: 1,
+  //     transition: { type: "spring", damping: 20, stiffness: 50 }
+  //   }
+  // };
 
-  const line2Variant = {
-    hidden: { x: "100vw", opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: { type: "spring", damping: 20, stiffness: 50 }
-    }
-  };
+  // const line2Variant = {
+  //   hidden: { x: "100vw", opacity: 0 },
+  //   visible: {
+  //     x: 0,
+  //     opacity: 1,
+  //     transition: { type: "spring", damping: 20, stiffness: 50 }
+  //   }
+  // };
 
   const typingContainer = {
     hidden: { opacity: 1 },
@@ -192,11 +192,11 @@ export default function Home() {
   const opacityFade = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   // 2. Subtext "Erase" effect: Map scroll to width/opacity
-  const textWidth = useTransform(scrollYProgress, [0, 0.4], ["100%", "0%"]);
+  // const textWidth = useTransform(scrollYProgress, [0, 0.4], ["100%", "0%"]);
 
-  // 3. Background Parallax & Zoom
-  const bgScale = useTransform(scrollYProgress, [0, 1], [1.1, 1.3]);
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  // // 3. Background Parallax & Zoom
+  // const bgScale = useTransform(scrollYProgress, [0, 1], [1.1, 1.3]);
+  // const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   return (
     <div id="homeTop">

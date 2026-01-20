@@ -45,7 +45,7 @@ function Counter({ value, suffix = "" }) {
 
       return () => controls.stop();
     }
-  }, [isInView, value]);
+  }, [isInView, value, count]);
 
   return (
     <span ref={ref}>

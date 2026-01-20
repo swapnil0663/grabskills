@@ -44,7 +44,7 @@ export default function Navbar() {
         }`}
       >
         <div 
-          className={`max-w-6xl mx-auto rounded-3xl transition-all duration-500 border border-white  ${
+          className={`max-w-6xl mx-auto rounded-3xl transition-all duration-500  ${
             scrolled 
             ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-2xl shadow-2xl py-3 px-8" 
             : "bg-transparent py-3 px-6 shadow-2xl  backdrop-blur-2xl border-2xl "
